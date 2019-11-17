@@ -1,0 +1,17 @@
+# config file version
+apiVersion: 1
+
+deleteDatasources:
+
+# list of datasources to insert/update depending
+# whats available in the database
+datasources:
+- name: InfluxDB
+  type: influxdb
+  access: proxy
+  database: telegraf_db
+  user: admin
+  password: zn8PMJYLH7XF6qsD
+  url: http://influxdb:8086
+  jsonData:
+    httpMode: GET
