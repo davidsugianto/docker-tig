@@ -61,8 +61,8 @@ services:
       - app-tier
 
   httpd:
-    container_name: nginx-grafana
-    image: asapdotid/nginx:${NGINX_VERSION}-${OS_VERSION}
+    container_name: nginx
+    image: bitnami/nginx:${NGINX_VERSION}-${OS_VERSION}
     hostname: nginx
     restart: always
     environment:
