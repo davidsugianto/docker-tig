@@ -41,7 +41,7 @@ services:
       - INFLUXDB_ADMIN_PASSWORD=${INFLUXDB_PASSWORD}
     expose:
       - '8086'
-    depends_on:
+    links:
       - telegraf
     networks:
       - app-tier
@@ -52,7 +52,7 @@ services:
     hostname: telegraf
     restart: always
     volumes:
-      - ./config/telegraf.conf:/etc/telegraf/telegraf.conf:ro
+      - ./config/telegraf.conf:/etc/telegraf/telegraf.conf:rw
     environment:
       - 'TZ=${TIMEZONE}'
     expose:
